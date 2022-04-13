@@ -46,9 +46,9 @@ const Product = () => {
                     </FilterContainer>
                     <AddContainer>
                         <AmountContainer>
-                            <RemoveIcon />
+                            <RemoveIcon style={{ cursor: "pointer" }} />
                             <Amount>1</Amount>
-                            <AddIcon />
+                            <AddIcon style={{ cursor: "pointer" }} />
                         </AmountContainer>
                         <Button>ADD TO CART</Button>
                     </AddContainer>
