@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { popularProducts } from "../data";
+import { mobileDevice } from "../responsive";
 import Product from "./Product";
 
 const Products = () => {

@@ -7,6 +7,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { mediumScreen, mobileDevice, smallScreen } from "../responsive";
 
 const Footer = () => {
     return (
@@ -70,12 +71,45 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+
+    ${mobileDevice({
+        flexDirection: "column",
+    })}
+
+    ${smallScreen({
+        flexDirection: "column",
+    })}
 `;
 const Left = styled.div`
     flex: 1;
+    padding: 20px;
+
+    ${mobileDevice({
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    })}
+    ${smallScreen({
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    })}
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+    ${mobileDevice({
+        fontSize: "24px",
+    })}
+
+    ${smallScreen({
+        fontSize: "24px",
+    })}
+    ${mediumScreen({
+        fontSize: "24px",
+    })}
+`;
 
 const Description = styled.div`
     margin: 20px 0;
@@ -96,12 +130,38 @@ const SocialIcon = styled.div`
     align-items: center;
     justify-content: center;
     margin: 5px;
+
+    ${mobileDevice({
+        width: "30px",
+        height: "30px",
+        margin: "3px",
+    })}
+    ${smallScreen({
+        width: "30px",
+        height: "30px",
+        margin: "5px",
+    })}
+    ${mediumScreen({
+        width: "30px",
+        height: "30px",
+        margin: "5px",
+    })}
 `;
 
 const Center = styled.div`
     align-self: start;
     flex: 1;
     padding: 20px;
+
+    ${mobileDevice({
+        display: "none",
+    })}
+    ${smallScreen({
+        display: "none",
+    })}
+    ${mediumScreen({
+        display: "none",
+    })}
 `;
 
 const Title = styled.h3`

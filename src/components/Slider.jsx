@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import { sliderItems } from "../data";
+import { largeScreen, mediumScreen, mobileDevice, smallScreen } from "../responsive";
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
@@ -47,6 +48,21 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
+
+    ${mobileDevice({
+        height: "30vh",
+    })}
+    ${smallScreen({
+        height: "50vh",
+    })}
+    ${mediumScreen({
+        height: "60vh",
+    })}
+    
+
+    ${largeScreen({
+        height: "70vh",
+    })}
 `;
 
 const Arrow = styled.div`
@@ -84,39 +100,134 @@ const Slide = styled.div`
     display: flex;
     align-items: center;
     background-color: #${(props) => props.bg};
+
+    ${mobileDevice({
+        height: "30vh",
+    })}
+    ${smallScreen({
+        height: "50vh",
+    })}
+
+    ${mediumScreen({
+        height: "60vh",
+    })}
+
+      ${largeScreen({
+        height: "70vh",
+    })}
 `;
 
 const ImageContainer = styled.div`
     height: 100%;
     flex: 1;
+
+    ${mobileDevice({
+        display: "none",
+    })}
+    ${smallScreen({
+        display: "none",
+    })}
 `;
 
 const Image = styled.img`
     height: 100%;
-    // object-fit: cover;
-    // object-position: center;
+
+    ${mediumScreen({
+        height: "75%",
+    })}
 `;
 
 const InfoContainer = styled.div`
     flex: 1;
-    padding: 60px;
+    padding: 50px;
+
+    ${mobileDevice({
+        padding: "10px 5px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    })}
+    ${smallScreen({
+        padding: "10px 5px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    })}
+
+    ${mediumScreen({
+        textAlign: "left",
+        padding: "10px",
+    })}
+
+    ${largeScreen({
+        padding: "20px",
+    })}
 `;
 
 const Title = styled.h1`
     font-size: 70px;
     font-weight: 600px;
+
+    ${mobileDevice({
+        fontSize: "24px",
+    })}
+    ${smallScreen({
+        fontSize: "30px",
+    })}
+    ${mediumScreen({
+        fontSize: "30px",
+    })}
+
+      ${largeScreen({
+        fontSize: "30px",
+    })}
 `;
 
 const Description = styled.p`
     font-size: 20px;
     margin: 50px 0;
     letter-spacing: 5px;
+
+    ${mobileDevice({
+        fontSize: "12px",
+        margin: "16px 0",
+        letterSpacing: "2px",
+    })}
+    ${smallScreen({
+        fontSize: "14px",
+        margin: "16px 8px",
+        letterSpacing: "2px",
+    })}
+    ${mediumScreen({
+        fontSize: "14px",
+        letterSpacing: "2px",
+    })}
+
+      ${largeScreen({
+        fontSize: "18px",
+        letterSpacing: "3px",
+    })}
 `;
 const Button = styled.button`
     padding: 10px;
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
+
+    ${mobileDevice({
+        fontSize: "14px",
+        padding: "4px 6px",
+    })}
+    ${smallScreen({
+        fontSize: "14px",
+        padding: "4px 6px",
+    })}
+    ${mediumScreen({
+        fontSize: "14px",
+        padding: "4px 6px",
+    })}
 `;
 
 export default Slider;

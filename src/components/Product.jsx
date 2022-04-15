@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { mobileDevice } from "../responsive";
 
 const Product = ({ item }) => {
     return (
@@ -53,6 +54,11 @@ const Container = styled.div`
     &:hover ${Info} {
         opacity: 1;
     }
+
+    ${mobileDevice({
+        height: "300px",
+        minWidth: "250px",
+    })}
 `;
 
 const Circle = styled.div`
@@ -64,7 +70,6 @@ const Circle = styled.div`
 `;
 const Image = styled.img`
     height: 75%;
-    width: 100%;
     z-index: 3;
 `;
 

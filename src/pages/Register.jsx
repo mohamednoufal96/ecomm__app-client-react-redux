@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mediumScreen, mobileDevice, smallScreen } from "../responsive";
 
 const Register = () => {
     return (
@@ -11,8 +12,8 @@ const Register = () => {
                     <Input placeholder="Last name" />
                     <Input placeholder="User name" />
                     <Input placeholder="Email" type="email" />
-                    <Input placeholder="Password" type="password" />
-                    <Input placeholder="Confirm password" type="password" />
+                    <Input placeholder="Password" type="password" autoComplete="off" />
+                    <Input placeholder="Confirm password" type="password" autoComplete="off" />
 
                     <Agreement>
                         By creating an account, I consent to the processing of my personal data in accordance with the{" "}
@@ -42,6 +43,16 @@ const Wrapper = styled.div`
     width: 40%;
     background: white;
     padding: 20px;
+
+    ${mobileDevice({
+        width: "75%",
+    })}
+    ${smallScreen({
+        width: "60%",
+    })}
+    ${mediumScreen({
+        width: "60%",
+    })}
 `;
 const Title = styled.h1`
     font-size: 24px;
@@ -64,7 +75,7 @@ const Input = styled.input`
 `;
 const Agreement = styled.p`
     margin: 20px 0;
-    font-size: 12px;
+    font-size: 14px;
 `;
 const Button = styled.button`
     width: 40%;

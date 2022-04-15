@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import { mobileDevice } from "../responsive";
 
 const Cart = () => {
     return (
@@ -22,7 +23,6 @@ const Cart = () => {
                     <TopButton>CHECKOUT NOW</TopButton>
                 </Top>
                 <Bottom>
-                    {" "}
                     <Info>
                         <Product>
                             <ProductDetails>
@@ -109,17 +109,27 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
     padding: 20px;
+
+    ${mobileDevice({
+        padding: "10px",
+    })}
 `;
 
 const Title = styled.h1`
     font-weight: 300;
     text-align: center;
+
+    ${mobileDevice({
+        fontSize: "24px",
+    })}
 `;
 
 const Top = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+
+    ${mobileDevice({})}
 `;
 
 const TopButton = styled.button`
@@ -130,26 +140,50 @@ const TopButton = styled.button`
     border: ${(props) => props.type === "filled" && "none"};
     background: ${(props) => (props.type === "filled" ? "black" : "transparent")};
     color: ${(props) => props.type === "filled" && "white"};
+
+    ${mobileDevice({
+        padding: "3px 5px",
+        fontSize: "12px",
+        fontWeight: "400",
+    })}
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+    ${mobileDevice({
+        display: "flex",
+        flexDirection: "column",
+    })}
+`;
 
 const TopText = styled.span`
     text-decoration: underline;
     margin: 0 10px;
     cursor: pointer;
     font-size: 18px;
+
+    ${mobileDevice({
+        fontSize: "14px",
+        margin: "0 4px",
+    })}
 `;
 
 const Bottom = styled.div`
     padding: 10px;
     display: flex;
-    // align-items: center;
     justify-content: center;
+
+    ${mobileDevice({
+        flexDirection: "column",
+        alignItems: "center",
+    })}
 `;
 
 const Info = styled.div`
     flex: 3;
+
+    ${mobileDevice({
+        marginBottom: "10px",
+    })}
 `;
 
 const Product = styled.div`
@@ -164,6 +198,10 @@ const ProductDetails = styled.div`
 
 const Image = styled.img`
     width: 200px;
+
+    ${mobileDevice({
+        width: "150px",
+    })}
 `;
 
 const Details = styled.div`
@@ -171,10 +209,20 @@ const Details = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    ${mobileDevice({ padding: "5px" })}
 `;
 
-const ProductName = styled.span``;
-const ProductId = styled.span``;
+const ProductName = styled.span`
+    ${mobileDevice({
+        fontSize: "14px",
+    })}
+`;
+const ProductId = styled.span`
+    ${mobileDevice({
+        fontSize: "14px",
+    })}
+`;
 
 const ProductColor = styled.div`
     width: 20px;
@@ -183,7 +231,11 @@ const ProductColor = styled.div`
     background: ${(props) => props.color};
 `;
 
-const ProductSize = styled.span``;
+const ProductSize = styled.span`
+    ${mobileDevice({
+        fontSize: "14px",
+    })}
+`;
 
 const PriceDetails = styled.div`
     flex: 1;
@@ -192,6 +244,10 @@ const PriceDetails = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    ${mobileDevice({
+        padding: "5px",
+    })}
 `;
 
 const ProductAmountContainer = styled.div`
@@ -199,14 +255,26 @@ const ProductAmountContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin: 20px 0;
+
+    ${mobileDevice({
+        margin: "5px 0",
+    })}
 `;
 const ProductAmount = styled.h3`
     font-size: 28px;
     margin: 5px;
+
+    ${mobileDevice({
+        fontSize: "16px",
+    })}
 `;
 const ProductPrice = styled.div`
     font-size: 30px;
     font-weight: 300;
+
+    ${mobileDevice({
+        fontSize: "24px",
+    })}
 `;
 
 const Hr = styled.hr`
@@ -234,6 +302,10 @@ const SummaryTitle = styled.h1`
     font-weight: 300;
     margin-bottom: 20px;
     text-align: center;
+
+    ${mobileDevice({
+        fontSize: "18px",
+    })}
 `;
 const SummaryItem = styled.div`
     padding: 5px;
@@ -244,7 +316,11 @@ const SummaryItem = styled.div`
     font-weight: ${(props) => props.type === "total" && "500"};
     font-size: ${(props) => (props.type === "total" ? "24px" : "18px")};
 `;
-const SummaryItemText = styled.span``;
+const SummaryItemText = styled.span`
+    ${mobileDevice({
+        fontSize: "16px",
+    })}
+`;
 const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`

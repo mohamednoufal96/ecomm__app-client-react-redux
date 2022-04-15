@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileDevice, smallScreen } from "../responsive";
 
 const CategoryItem = ({ item }) => {
     return (
@@ -23,6 +24,14 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    ${mobileDevice({
+        height: "30vh",
+    })}
+
+    ${smallScreen({
+        height: "30vh",
+    })}
 `;
 
 const Info = styled.div`
@@ -41,6 +50,11 @@ const Title = styled.h1`
     color: white;
     font-weight: bold;
     margin-bottom: 20px;
+
+    ${mobileDevice({
+        fontSize: "24px",
+        marginBotton: "8px",
+    })}
 `;
 
 const Button = styled.button`
@@ -50,6 +64,10 @@ const Button = styled.button`
     background: white;
     color: gray;
     cursor: pointer;
+
+    ${mobileDevice({
+        padding: "4px 6px",
+    })}
 `;
 
 export default CategoryItem;

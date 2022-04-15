@@ -7,17 +7,7 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 
 function App() {
-    return (
-        <>
-            {/* <Home /> */}
-            {/* <ProductList /> */}
-            {/* <Product /> */}
-            {/* <Register /> */}
-            {/* <Login /> */}
-
-            <Cart />
-        </>
-    );
+    return <Cart />;
 }
 
 export default App;
