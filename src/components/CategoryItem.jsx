@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobileDevice, smallScreen } from "../responsive";
 
@@ -8,7 +9,9 @@ const CategoryItem = ({ item }) => {
             <Image src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Button> SHOP NOW </Button>
+                <Link to={`/products/${item.category}`}>
+                    <Button> SHOP NOW </Button>
+                </Link>
             </Info>
         </Container>
     );
